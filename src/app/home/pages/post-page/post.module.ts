@@ -6,10 +6,10 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { PostPage } from './post.page';
 
-// const routes: Routes = [{
-//     path: '',
-//     component: PostPage
-// }];
+const routes: Routes = [{
+    path: ':id',
+    component: PostPage
+}];
 
 const COMMON_IMPORTS = [
     FlexLayoutModule,
@@ -21,7 +21,7 @@ const COMMON_IMPORTS = [
 const COMMON_DECLARATIONS = [PostPage ];
 
 @NgModule({
-    imports: [COMMON_IMPORTS],
+    imports: [COMMON_IMPORTS,  RouterModule.forChild(routes)],
     declarations: COMMON_DECLARATIONS,
     exports: COMMON_DECLARATIONS
 })

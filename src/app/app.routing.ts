@@ -5,6 +5,9 @@ const routes: Routes = [{
     path: '',
     pathMatch: 'full',
     loadChildren: './home/home.routing#HomeRoutingModule'
+}, {
+    path: 'post-page',
+    loadChildren: './home/pages/post-page/post.module#PostPageModule'
 }];
 
 @NgModule({
