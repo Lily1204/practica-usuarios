@@ -6,7 +6,7 @@
     <div class="item" >
         <mat-list-item 
         *ngFor="let user of  User$ | async">
-            <i class="material-icons md-36">face</i>
+            <i class="material-icons md-36" [routerLink]="['/user-list',user.id]">face</i>
             <h4  >{{user.name}}</h4>
           </mat-list-item>
     </div>
