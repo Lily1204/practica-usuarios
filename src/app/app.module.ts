@@ -14,6 +14,7 @@ import { HomeRoutingModule } from './home/home.routing';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FooterModule } from './shared/components/footer/footer.module';
+import { CommentService } from './shared/services/comment.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FooterModule } from './shared/components/footer/footer.module';
       maxAge: 25, // Retains last 25 states
     }),
   ],
-  providers: [UserService ],
+  providers: [UserService, CommentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

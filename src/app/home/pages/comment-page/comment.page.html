@@ -1,0 +1,14 @@
+<mat-list class="list-group" fxLayout="column" >
+            <h3 mat-subheader class="title" fxLayoutAlign="center center">Users</h3>
+        </div>
+          <div class="item" >
+              <mat-list-item 
+              *ngFor="let comment of  Comment$ | async">
+                  <i class="material-icons md-36">face</i>
+                  <h4  >{{id.name}}</h4>
+                  <h4  >{{name.name}}</h4>
+                  <h4  >{{email.name}}</h4>
+                  <h4  >{{body.name}}</h4>
+                </mat-list-item>
+          </div>
+      </mat-list>
