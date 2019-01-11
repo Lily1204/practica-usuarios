@@ -1,0 +1,7 @@
+<mat-list>
+  <h3 mat-subheader class="title" fxLayoutAlign="center center">Users</h3>
+  <mat-list-item *ngFor="let post of Post$ | async">
+    <i class="material-icons md-36">face</i>
+    <h4>{{post.name}}</h4>
+  </mat-list-item>
+</mat-list>

@@ -2,7 +2,6 @@
   <div fxFlex="10%">
       <h3 mat-subheader class="title" fxLayoutAlign="center center">Users</h3>
   </div>
-    
     <div class="item" >
         <mat-list-item 
         *ngFor="let user of  User$ | async">
@@ -10,5 +9,4 @@
             <h4  >{{user.name}}</h4>
           </mat-list-item>
     </div>
-   
 </mat-list>
