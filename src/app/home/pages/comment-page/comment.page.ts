@@ -30,10 +30,5 @@ export class CommentPage implements OnInit {
     ngOnInit() {
         this.store.dispatch(new FromCommentActions.GETALLCOMMENT(this.id));
     }
-    // ngOnInit() {
-    //     this.store.dispatch(new fromMessage.GetMessage(this.idUser));
-    //     this.messageService.getMessageById(1).subscribe(data=> {
-    //       this.Messa= data;
-    //       console.log(this.Messa)
-    //     }
+   
 }
