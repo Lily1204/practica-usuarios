@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { LandingPage } from "./landing.page";
 import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { CommonModule } from "@angular/common";
