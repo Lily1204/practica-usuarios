@@ -14,6 +14,10 @@ import { HomeRoutingModule } from './home/home.routing';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FooterModule } from './shared/components/footer/footer.module';
+import { PostService } from './shared/services/post.service';
+import { PostPageModule } from './home/pages/post-page/post.module';
+import { MatListModule } from '@angular/material/list';
+import { CommentService } from './shared/services/comment.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,15 @@ import { FooterModule } from './shared/components/footer/footer.module';
     AppRoutingModule,
     HomeRoutingModule,
     MatIconModule,
+    PostPageModule,
+    MatListModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),
   ],
-  providers: [UserService ],
+  providers: [UserService, PostService, CommentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
