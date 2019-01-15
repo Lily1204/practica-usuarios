@@ -13,3 +13,10 @@ export const getUsers = createSelector (
     usersState,
     state => state.data
 );
+
+export const getUserById = (id) => createSelector (
+    usersState,
+    state => state.data.find(user => {
+        return user.id == id;
+    })
+);
