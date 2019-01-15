@@ -14,9 +14,10 @@
 <mat-list>
     <h3 mat-subheader class="title" fxLayoutAlign="center center">post</h3>
     <mat-list-item *ngFor="let post of Post$ | async">
+        <i class="material-icons md-36" [routerLink] = "['/comment-page', post.id]">face</i>
       <h4>{{post.id }}</h4>
       <br>
-      <h4>{{post.title}}</h4>
+      <h4 >{{post.title}}</h4>
     </mat-list-item>
     <br>
   </mat-list>

@@ -8,11 +8,12 @@ export enum AuthActionTyper {
 }
  export class GETALLCOMMENT implements Action {
     readonly type = AuthActionTyper.GET_ALL_COMMENT;
+    constructor(public id: any) {}
  }
 
  export class GETALLSUCCESCOMMENT implements Action {
      readonly type = AuthActionTyper.GET_ALL_SUCCES_COMMENT;
-    constructor(public payload: Comment[]) {}
+    constructor(public id: any, public payload: Comment[]) {}
 }
 
  export class GETALLERRORCOMMENT implements Action {

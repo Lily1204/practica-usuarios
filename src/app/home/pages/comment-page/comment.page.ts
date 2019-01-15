@@ -6,20 +6,34 @@ import { AppState } from '../../../shared/store/reducers';
 
 import * as FromCommentActions from '../../../shared/store/actions/comment.actions';
 import { getComment } from 'src/app/shared/store/selectors/comment.selector';
+import { ActivatedRoute } from '@angular/router';
+import { CommentService } from 'src/app/shared/services/comment.service';
 @Component({
     selector: 'comment-page',
-    templateUrl: './landing.page.html',
-    styleUrls: ['./landing.page.scss']
+    templateUrl: './comment.page.html',
+    styleUrls: ['./comment.page.scss']
 })
 
 export class CommentPage implements OnInit {
 
-    Comment$: Observable<Comment[]>;
+    Comments$: Observable<Comment[]>;
+    id: any;
+    comment: Comment[];
 
-    constructor (private store: Store<AppState>) {
-        this.Comment$ = this.store.select(getComment);
-       }
+    constructor (private store: Store<AppState>,
+        private route: ActivatedRoute,
+        private commentService: CommentService) {
+
+            this.id = this.route.snapshot.params.id;
+            this.Comments$ = this.store.select(getComment);
+        }
     ngOnInit() {
-        this.store.dispatch(new FromCommentActions.GETALLCOMMENT);
+        this.store.dispatch(new FromCommentActions.GETALLCOMMENT(this.id));
     }
+    // ngOnInit() {
+    //     this.store.dispatch(new fromMessage.GetMessage(this.idUser));
+    //     this.messageService.getMessageById(1).subscribe(data=> {
+    //       this.Messa= data;
+    //       console.log(this.Messa)
+    //     }
 }

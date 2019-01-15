@@ -13,4 +13,7 @@ import { Comment } from '../../home/models/comment';
         return this.http.get<Comment[]>(this.url);
 
     }
+    getCommentById(id) {
+        return this.http.get<Comment[]>(this.url + `?postId=${id}`);
+    }
 }

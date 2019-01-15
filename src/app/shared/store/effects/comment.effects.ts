@@ -10,12 +10,12 @@ import { CommentService } from '../../services/comment.service';
 @Injectable()
 export class CommentEffects {
     @Effect()
-    getAll$: Observable<Action> = this.actions$.pipe(
-        ofType(
-            FromComment.AuthActionTyper.GET_ALL_COMMENT),
-            mergeMap(actions =>
-                this.commentService.getAllComment().pipe(
-                    map(comment => new FromComment.GETALLSUCCESCOMMENT(comment)),
+    loadPost$: Observable<Action> = this.actions$.pipe(
+        ofType(FromComment.AuthActionTyper. GET_ALL_COMMENT),
+            map((action: FromComment.GETALLCOMMENT) => action.id),
+            mergeMap(id =>
+                this.commentService.getCommentById(id).pipe(
+                    map((comments, id1) => new FromComment.GETALLSUCCESCOMMENT(id1, comments )),
                         catchError(error => of(new FromComment.GETALLERRORCOMMENT(error)))
                 )
             )

@@ -4,6 +4,6 @@ import { PostEffects } from './post.effects';
 
 export const effects = [
     UserEffects,
-    CommentEffects
+    CommentEffects,
     PostEffects
 ];

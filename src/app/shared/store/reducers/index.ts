@@ -11,7 +11,7 @@ export interface AppState {
 
 export const reducers: ActionReducerMap<AppState> = {
     users: FromUser.reducer,
-    comments: FromComment.reducer
+    comments: FromComment.reducer,
     posts: FromPost.reducer
 };
 
