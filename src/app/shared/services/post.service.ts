@@ -13,4 +13,11 @@ import { Post } from 'src/app/home/models/post';
         return this.http.get<Post[]>(this.url);
 
     }
+    // getById(id) {
+    //     return this.http.get<Post>(this.url + `/${id}`);
+    // }
+
+    getByIdUser(id) {
+        return this.http.get<Post[]>(this.url + `?userId=${id}`);
+      }
 }
