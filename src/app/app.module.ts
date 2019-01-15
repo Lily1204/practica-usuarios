@@ -17,6 +17,7 @@ import { FooterModule } from './shared/components/footer/footer.module';
 import { PostService } from './shared/services/post.service';
 import { PostPageModule } from './home/pages/post-page/post.module';
 import { MatListModule } from '@angular/material/list';
+import { CommentService } from './shared/services/comment.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { MatListModule } from '@angular/material/list';
       maxAge: 25, // Retains last 25 states
     }),
   ],
-  providers: [UserService, PostService ],
+  providers: [UserService, PostService, CommentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

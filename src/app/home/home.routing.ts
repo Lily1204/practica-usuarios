@@ -7,6 +7,10 @@ const routes: Routes = [{
 }, {
     path: '',
     loadChildren: './pages/post-page/post.module#PostPageModule'
+},
+{
+    path: '',
+    loadChildren: './pages/comment-page/comment.module#CommentPageModule'
 }];
 
 @NgModule({
