@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import {}  from './pages/comment-page/comment.module'
+
 const routes: Routes = [{
     path: '',
     loadChildren: './pages/landing/landing.module#LandingModule'
