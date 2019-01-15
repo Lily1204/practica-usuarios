@@ -1,4 +1,4 @@
-import {  Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../shared/store/reducers';
@@ -18,14 +18,15 @@ export class PostPage implements OnInit {
 
     Post$: Observable<Post[]>;
     User$: Observable<Users>;
+    id: any;
 
-    constructor (private store: Store<AppState>, private route: ActivatedRoute) {
-        let id = this.route.snapshot.paramMap.get('id');
-        this.User$ = this.store.select(getUserById(id));
-        this.Post$ = this.store.select(getPostId(id));
-       }
+    constructor(private store: Store<AppState>, private route: ActivatedRoute) {
+        this.id = this.route.snapshot.paramMap.get('id');
+        this.User$ = this.store.select(getUserById(this.id));
+        this.Post$ = this.store.select(getPostId(this.id));
+    }
 
     ngOnInit() {
-        this.store.dispatch(new FromPostActions.GETALLPOST);
+        this.store.dispatch(new FromPostActions.GETALLPOST(this.id));
     }
 }

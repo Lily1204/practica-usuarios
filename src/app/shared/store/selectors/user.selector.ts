@@ -17,6 +17,6 @@ export const getUsers = createSelector (
 export const getUserById = (id) => createSelector (
     usersState,
     state => state.data.find(user => {
-        return user.id = id;
+        return user.id == id;
     })
 );

@@ -13,9 +13,10 @@ export const getPosts = createSelector (
     postsState,
     state => state.data
 );
+
 export const getPostId = (id) => createSelector (
     postsState,
     state => state.data.filter(user => {
-        return user.id = id;
+        return user.userId = id;
     })
 );

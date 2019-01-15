@@ -8,11 +8,12 @@ export enum AuthActionTyper {
 }
  export class GETALLPOST implements Action {
     readonly type = AuthActionTyper.GET_ALL_POST;
+    constructor (public id: any) {}
  }
 
  export class GETALLSUCCESPOST implements Action {
      readonly type = AuthActionTyper.GET_ALL_SUCCES_POST;
-    constructor(public payload: Post[]) {}
+    constructor(public id: any, public payload: Post[]) {}
 }
 
  export class GETALLERRORPOST implements Action {
