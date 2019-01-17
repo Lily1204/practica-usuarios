@@ -1,0 +1,50 @@
+@import "../../../../variables.scss";
+
+.card {
+  max-width: 400px;
+  background-color: antiquewhite;
+  border: 1px solid rgb(248, 237, 248);
+  margin: 40px;
+
+  .image {
+    background-image: url('../../../../assets/user.png');
+    background-size: cover;
+
+  }
+
+  .image-background {
+    opacity: 0.7;
+    filter: alpha(opacity=50);
+  }
+}
+.list:hover{
+  cursor: pointer;
+}
+
+.title {
+  font-family: 'Great Vibes';
+  font-size: 3.2rem;
+  color: $app-warn;
+}
+
+.list {
+  background-color: rgb(248, 230, 248);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.post {
+  margin: 20px;
+}
+
+.viewport {
+  height: 350px;
+  width: 500px;
+  border-style: outset;
+  box-shadow: 10px -15px 10px $app-warn;
+}
+
+.scroll-sm {
+  height: 400px;
+  width: 300px;
+}

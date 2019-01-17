@@ -1,23 +1,43 @@
-<mat-list class="list-group" fxLayout="column" >
-  <div fxFlex="10%">
-      <h3 mat-subheader class="title" fxLayoutAlign="center center">Users</h3>
+<div class="container" fxLayout='row' fxLayout.lt-md="column">
+  <div class="user" fxFlex="50%" fxLayoutAlign="center start">
+    <mat-card class="card" *ngIf=" User$ | async as user">
+      <mat-card-header>
+        <div mat-card-avatar class="image"></div>
+        <mat-card-title>{{user.id}}</mat-card-title>
+        <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="image-background" src="../../../../assets/user.png" alt="Photo of a Shiba Inu">
+      <mat-card-content fxLayout='column' fxLayoutAlign="center center">
+        <span>Email: {{user.email}}</span>
+        <span>address: {{user.address.street}} </span>
+        <span>suite: {{user.address.suite}}</span>
+        <span>city: {{user.address.city}}</span>
+        <span>zipcode: {{user.address.zipcode}}</span>
+        <span>Lat: {{user.address.geo.lat}}</span>
+        <span>lng: {{user.address.geo.lng}}</span>
+      </mat-card-content>
+    </mat-card>
   </div>
-    <div class="item" >
-        <mat-list-item  *ngIf=" User$ | async as user">
-            <i class="material-icons md-36">face</i>
-            <h4>{{user.id}}</h4>
-            <h4>{{user.email}}</h4>
-          </mat-list-item>
-    </div>
-</mat-list>
 
-<mat-list>
-    <h3 mat-subheader class="title" fxLayoutAlign="center center">post</h3>
-    <mat-list-item *ngFor="let post of Post$ | async">
-        <i class="material-icons md-36" [routerLink] = "['/comment-page', post.id]">face</i>
-      <h4>{{post.id }}</h4>
-      <br>
-      <h4 >{{post.title}}</h4>
-    </mat-list-item>
-    <br>
-  </mat-list>
+  <div class="post" fxFlex="50%" fxLayoutAlign="center center">
+    <mat-selection-list>
+      <h1 class="title" fxLayoutAlign="center"> Post</h1>
+      <cdk-virtual-scroll-viewport itemSize="100" class="viewport" ngClass.md="scroll-media" ngClass.lt-sm="scroll-sm">
+        <mat-list *ngFor="let post of Post$ | async" [routerLink]="['/comment-page', post.id]" fxLayoutAlign="center">
+          <mat-list class="list">
+            <span>UserId: {{post.userId}}</span>
+            <br>
+            <span>Id: {{post.id}}</span>
+            <br>
+            <span>Title: {{post.title}}</span>
+            <br>
+            <span>Body: {{post.body}}</span>
+          </mat-list>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </cdk-virtual-scroll-viewport>
+    </mat-selection-list>
+  </div>
+
+</div>
+

@@ -1,0 +1,21 @@
+@import "../../../../variables.scss";
+
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.title {
+  font-family: 'Great Vibes';
+  font-size: 3.2rem;
+  color: $app-warn;
+}
+
+.sub-title {
+  color: $app-warn;
+  font-weight: bold;
+
+}

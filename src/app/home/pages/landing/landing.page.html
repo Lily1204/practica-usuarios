@@ -1,19 +1,7 @@
-<mat-list class="list-group" fxLayout="column" >
-  <div fxFlex="10%">
-      <h3 mat-subheader class="title" fxLayoutAlign="center center">Users</h3>
+<h1 class="title" fxLayoutAlign="center">Users</h1>
+<div class="card" fxLayout='row wrap' fxLayoutAlign="center center">
+  <div class="info" fxLayout='column' *ngFor="let user of  User$ | async" fxLayoutAlign="center center">
+    <img src="../../../../assets/user.png" [routerLink]="['/post-page', user.id]">
+    <p class="sub-title">{{user.name}}</p>
   </div>
-    <div class="item" >
-        <mat-list-item  *ngFor="let user of  User$ | async">
-            <i class="material-icons md-36" [routerLink] = "['/post-page', user.id]">face</i>
-            <h4  >{{user.name}}</h4>
-          </mat-list-item>
-    </div>
-</mat-list>
-<!-- 
-<mat-list>
-    <h3 mat-subheader class="title" fxLayoutAlign="center center">Users</h3>
-    <mat-list-item *ngFor="let post of Post$ | async">
-      <i class="material-icons md-36">face</i>
-      <h4>{{post.name}}</h4>
-    </mat-list-item>
-  </mat-list> -->
+</div>

@@ -5,7 +5,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { CommonModule } from "@angular/common";
 import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 const routes: Routes = [{
     path: '',
     component: LandingPage
@@ -15,7 +15,8 @@ const COMMON_IMPORTS = [
     FlexLayoutModule,
     MatIconModule,
     CommonModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
 ];
 
 const COMMON_DECLARATIONS = [LandingPage ];
