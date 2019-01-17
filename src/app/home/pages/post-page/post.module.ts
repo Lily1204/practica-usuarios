@@ -5,6 +5,8 @@ import { CommonModule } from "@angular/common";
 import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { PostPage } from './post.page';
+import {MatCardModule} from '@angular/material/card';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
 
 const routes: Routes = [{
     path: ':id',
@@ -15,7 +17,9 @@ const COMMON_IMPORTS = [
     FlexLayoutModule,
     MatIconModule,
     CommonModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    ScrollDispatchModule
 ];
 
 const COMMON_DECLARATIONS = [PostPage ];

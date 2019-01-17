@@ -18,13 +18,14 @@ import { PostService } from './shared/services/post.service';
 import { PostPageModule } from './home/pages/post-page/post.module';
 import { MatListModule } from '@angular/material/list';
 import { CommentService } from './shared/services/comment.service';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NavbarModule,
     FooterModule,
     BrowserModule,

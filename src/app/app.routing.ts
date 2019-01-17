@@ -8,6 +8,9 @@ const routes: Routes = [{
 }, {
     path: 'post-page',
     loadChildren: './home/pages/post-page/post.module#PostPageModule'
+}, {
+    path: 'post-page',
+    loadChildren: './home/pages/post-page/post.module#PostPageModule'
 },
 {
     path: 'comment-page',

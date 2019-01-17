@@ -1,5 +1,25 @@
-
-      <div class="detail-message" *ngFor = "let comment of  Comments$ | async">
-        <h4> {{comment.postId }} {{ comment.id}}</h4> 
-        <!-- <h4>{{comment.id}}</h4> -->
-      </div>
+<mat-accordion class="container"  fxFlex="100%" fxFlexAlign="center center">
+    <h1 class="title" fxLayoutAlign="center">Commenst</h1>
+  <mat-expansion-panel (opened)="panelOpenState = true" 
+                        (closed)="panelOpenState = false" 
+                        *ngFor="let comment of  Comments$ | async">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        COMMENTS
+      </mat-panel-title>
+      <mat-panel-description>
+        {{comment.name}} {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <span class="sub-title">postId:</span>
+    <span>{{comment.postId}}</span><br>
+    <span class="sub-title">Id:</span>
+    <span>{{comment.id}}</span> <br>
+    <span class="sub-title">Name:</span>
+    <span>{{comment.name}}</span><br>
+    <span class="sub-title">Email:</span>
+    <span>{{comment.email}}</span><br>
+    <span class="sub-title">Body:</span>
+    <span>{{comment.body}}</span><br>
+  </mat-expansion-panel>
+</mat-accordion>
